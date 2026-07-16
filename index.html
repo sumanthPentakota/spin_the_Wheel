@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>❤️ Love Spin Wheel ❤️</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+
+    <div class="main-container">
+
+        <h1 class="title">
+            ❤️ Love Lucky Wheel ❤️
+        </h1>
+
+        <p class="subtitle">
+            Spin the wheel and let destiny decide 💖
+        </p>
+
+        <!-- Wheel Container -->
+        <div class="wheel-wrapper">
+
+            <!-- Pointer -->
+            <div class="pointer">
+                ▼
+            </div>
+
+            <!-- Wheel -->
+            <svg id="wheel"
+                width="600"
+                height="600"
+                viewBox="0 0 600 600">
+
+                <defs>
+
+                    <filter id="shadow">
+                        <feDropShadow
+                            dx="0"
+                            dy="0"
+                            stdDeviation="12"
+                            flood-color="#ff4f81" />
+                    </filter>
+
+                    <radialGradient id="centerGlow">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#ffd6e7"/>
+                    </radialGradient>
+
+                </defs>
+
+                <!-- Outer Ring -->
+                <circle
+                    cx="300"
+                    cy="300"
+                    r="290"
+                    fill="#fff"
+                    stroke="#ff4d88"
+                    stroke-width="12"
+                    filter="url(#shadow)" />
+
+                <!-- Segments generated using JS -->
+                <g id="segments"></g>
+
+                <!-- Labels -->
+                <g id="labels"></g>
+
+                <!-- Center -->
+                <circle
+                    cx="300"
+                    cy="300"
+                    r="72"
+                    fill="url(#centerGlow)"
+                    stroke="#ff4d88"
+                    stroke-width="8" />
+
+                <text
+                    x="300"
+                    y="300"
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    class="center-text">
+                    LOVE
+                </text>
+
+            </svg>
+
+            <!-- Spin Button -->
+            <button id="spinBtn">
+                <i class="fa-solid fa-heart"></i>
+                SPIN
+            </button>
+
+        </div>
+
+        <!-- Result -->
+        <div id="resultBox">
+
+            <div class="popup">
+
+                <h2>
+                    🎉 Congratulations!
+                </h2>
+
+                <h3 id="winnerText">
+                    Prize
+                </h3>
+
+                <button id="closePopup">
+                    Close ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Confetti -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Audio (Optional) -->
+    <audio id="spinSound">
+        <source src="assets/spin.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="winSound">
+        <source src="assets/win.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
